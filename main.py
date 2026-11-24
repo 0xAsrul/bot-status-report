@@ -20,6 +20,8 @@ def main() -> None:
     assert LINE, "line must not be empty"
     assert LINE == LINE.strip(), "line must have no leading/trailing whitespace"
     assert "\n" not in LINE and "\r" not in LINE, "line must be a single line"
+    assert "  " not in LINE, "line must contain no double space"
+    assert "\t" not in LINE, "line must contain no tab character"
     assert 1 <= len(LINE) <= 200, "line must be 1-200 characters"
 
     os.makedirs("/output", exist_ok=True)
